@@ -12,7 +12,7 @@ body{
     font-size: 16px;
     line-height: 1.6em;
     background-color: #F2F2F2;
-    
+    overflow-x: hidden !important;
    
 }
 
@@ -44,7 +44,7 @@ a{
 #nav{
     background-color: #FF5757;
      position:fixed;
-     
+     overflow-x: hidden;
      z-index: 100000000;
      width: 100%;
      margin: 0 auto;
@@ -172,6 +172,7 @@ a{
 /* Section-2 */
 #section_2{
     padding-top: 8rem;
+    overflow-x: hidden;
 }
 .section_2{
   
@@ -238,7 +239,7 @@ a{
 
 /* Services */
 #section_3{
-    
+    overflow-x: hidden;
     padding: 5px 20px;
     
   
@@ -291,6 +292,7 @@ a{
 /* Testimonials */
 
 #section_4{
+    overflow-x: hidden;
     padding-top: 6rem;
     padding-bottom: 8rem;
     /* padding: 5px 20px;     */
@@ -365,6 +367,7 @@ a{
 
 /* About */
 #section_5{
+    overflow-x: hidden;
     padding: 5px 20px;
     background-color: white;
 }
@@ -404,8 +407,11 @@ a{
 }
 
 /* Contact */
-
+#section_6{
+    overflow-x: hidden;
+}
 .contact{
+
     padding: 5px 20px;
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
@@ -452,7 +458,7 @@ a{
     width: 100%;
     display: inline-block;
 }
-.form .submit  button{
+.form .submit  a{
     padding: 15px 0;
     background: #111;
     color: #fff;
@@ -491,6 +497,7 @@ a{
 /* footer */
 
 #footer{
+    overflow-x: hidden;
     margin-top: 8rem;
     background-color: black;
     color:white;
@@ -524,8 +531,16 @@ a{
     
 }
 
-.input_text{
-    color: red;
+.input_text .errorText, .input_text .successText {
+    padding: 5px;
+    border-radius: .3em;
+    color: white;
+}
+.errorText{
+    background-color: red;
+}
+.successText{
+    background-color: green;
 }
 
 /* Media Query */
