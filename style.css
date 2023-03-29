@@ -32,8 +32,8 @@ a{
 }
 
 .logo img{
-    width: 75px;
-    height: 75px;
+    width: 100px;
+    height: 100px;
 }
 
 .container{
@@ -171,7 +171,7 @@ a{
 
 /* Section-2 */
 #section_2{
-    padding-top: 8rem;
+    padding-top: 9rem;
     overflow-x: hidden;
 }
 .section_2{
@@ -245,7 +245,7 @@ a{
   
 }
 #section_3 .service_container{
-    padding-top: 6rem;
+    padding-top: 7rem;
 }
 
 
@@ -293,7 +293,7 @@ a{
 
 #section_4{
     overflow-x: hidden;
-    padding-top: 6rem;
+    padding-top: 7rem;
     padding-bottom: 8rem;
     /* padding: 5px 20px;     */
 }
@@ -368,12 +368,13 @@ a{
 /* About */
 #section_5{
     overflow-x: hidden;
+    overflow-y: hidden;
     padding: 5px 20px;
     background-color: white;
 }
 
 #section_5 .section_5_container{
-    padding-top: 6rem;
+    padding-top: 7rem;
     padding-bottom: 3rem;
     text-align: center;
 }
@@ -406,9 +407,88 @@ a{
     list-style-type:disc;
 }
 
+/* Consult */
+#consult{
+    padding: 5rem 0;
+    overflow-x: hidden;
+    background-color: black;
+    color: white;
+}
+.consult{
+    padding: 5px 20px;
+}
+
+.main_consult{
+  margin: 4rem 0;
+}
+
+
+.main_consult .img{
+    text-align: right;
+}
+
+.main_consult .img{
+    text-align: center;
+}
+
+.main_consult .img img{
+  width: 100%;
+  object-fit: cover;
+    height: 300px;
+  border-radius: .3em;
+}
+
+
+.main_consult{
+ display: grid;
+ grid-gap: 1em;
+ 
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+ 
+  justify-content: space-between;
+  align-items: center; 
+}
+
+
+
+.main_consult h1{
+    color: #FF5757;
+     font-weight: 500;
+     font-size: 2rem;
+     margin-bottom: 2rem;   
+}
+.main_consult p{
+    font-weight: 400;
+}
+
+.text_workout{
+    text-align: left ;
+    padding-right: 1.5rem;
+}
+.consult_button{
+    margin: 20px;
+    text-align: center;
+}
+.consult a{
+    border: 1px solid white;
+    color: white;
+    border-radius: .3em;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    font-weight: 500;
+    
+}
+.consult a:hover{
+    background-color:  #FF5757;
+    color: white;
+}
+
+
+
 /* Contact */
 #section_6{
     overflow-x: hidden;
+    overflow-y: hidden;
 }
 .contact{
 
@@ -416,13 +496,14 @@ a{
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
     gap: 1.5rem;
-    padding-top: 8rem;
+    padding-top: 9rem;
 }
 .form h2{
     font-size: 2rem;
     width: 100%;  
     padding-bottom: 10px;
 }
+
 .form .submit{
     display: flex;
     flex-direction: column;
@@ -579,7 +660,7 @@ a{
     font-weight: bold;
     background:rgba(0,0,0, 0.7);
     z-index: 100000;
-    margin-top: 5.75rem;
+    margin-top: 7.3rem;
     transition: .5s;
 }
 
@@ -673,7 +754,40 @@ a{
 
 
 
-/* Testimonials */
+/* Consult */
+#consult{
+    margin-top: 6rem;
+       
+}
+.main_consult{
+    padding: 5px 20px;
+}
+
+.main_consult{
+  margin: 2rem 0;
+}
+
+
+.main_consult .img{
+    text-align: center;
+}
+
+
+.main_consult .img img{
+    width: 400px;
+    height: 200px;
+}
+
+
+.consult h1{
+     font-weight: 500;
+     font-size: 1.5rem;
+     margin-bottom: 1rem;   
+}
+.consult p{
+    font-weight: 300;
+    font-size: 15px;
+}
  
 
 }
@@ -705,14 +819,6 @@ a{
         margin: 0 auto;
     }
 
-    /* .fitness .img{
-        width: 70%;
-        margin: 0 auto;
-    } */
-    /* .workout .img{
-        width: 80%;
-        margin: 0 auto;
-    } */
     .fitness{
         text-align: center;
         margin: 0 auto;
@@ -729,7 +835,35 @@ a{
     .fitness .img img{
         margin: 20px 0;  
     }
+
+    /* Consult */
+
+   .main_consult{
+        display: flex;
+        flex-direction: column;
+        
+    }
     
+    .text_workout{
+        text-align: center ;
+        padding-right: 0;
+    }
+    
+
+    .main_consult{
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    
+    .main_consult .img{
+        width: 100%;
+       
+        margin: 0 auto;
+    }
+    .main_consult .img img{
+        margin: 20px 0;  
+    } 
    
 
 
@@ -941,6 +1075,31 @@ a{
         width: 100%;
         margin: 20px 0;  
     }
+    
+    /* Consult */
+   
+    .main_consult .text_workout{
+        text-align: center ;
+        padding-right:0;
+    }
+  
+
+    .main_consult{
+        text-align: center;
+        margin: 0 auto;
+    }
+    
+     
+    
+   
+   
+   
+    .main_consult .img img{
+        width: 100%;
+        margin: 20px auto;
+        
+    }
+  
     
    
 
