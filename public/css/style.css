@@ -105,7 +105,7 @@ a{
 
 /* Hero Section */
 .back{
-    background-image:   url('./assets/background.jpg') ;
+    background-image:   url('../assets/background.jpg') ;
     width: 100%;
     height: 100vh;
     background-size: cover;
@@ -219,7 +219,6 @@ a{
 
 
 .section_2 h1{
-     /* font-family: 'Roboto', sans-serif; */
      font-weight: 500;
      font-size: 3rem;
      margin-bottom: 2rem;   
@@ -241,7 +240,7 @@ a{
 #section_3{
     overflow-x: hidden;
     padding: 5px 20px;
-    
+    background-color: white;
   
 }
 #section_3 .service_container{
