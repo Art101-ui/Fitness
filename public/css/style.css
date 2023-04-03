@@ -237,19 +237,19 @@ a{
 }
 
 /* Services */
-#section_3{
+#services{
     overflow-x: hidden;
     padding: 5px 20px;
     background-color: white;
   
 }
-#section_3 .service_container{
+#services .service_container{
     padding-top: 7rem;
 }
 
 
 
-#section_3 h1{
+#services h1{
     
     text-align: center;
      padding: 20px 0;
@@ -290,13 +290,13 @@ a{
 
 /* Testimonials */
 
-#section_4{
+#testimonials{
     overflow-x: hidden;
     padding-top: 7rem;
     padding-bottom: 8rem;
     /* padding: 5px 20px;     */
 }
-#section_4 h1{
+#testimonials h1{
 
     text-align: center;
      padding: 2rem 0;
@@ -365,25 +365,25 @@ a{
 
 
 /* About */
-#section_5{
+#about{
     overflow-x: hidden;
     overflow-y: hidden;
     padding: 5px 20px;
     background-color: white;
 }
 
-#section_5 .section_5_container{
+#about .section_5_container{
     padding-top: 7rem;
     padding-bottom: 3rem;
     text-align: center;
 }
-#section_5 h1{
+#about h1{
         text-align: center;
          padding: 20px 0;
          font-weight: 500;
          font-size: 3rem; 
 }
-#section_5 h3{
+#about h3{
     font-size: 1.4rem;
     font-weight: 400;
     padding-top: 10px;
@@ -451,10 +451,11 @@ a{
 
 
 .main_consult h1{
-    color: #FF5757;
+    color: white;
      font-weight: 500;
      font-size: 2rem;
-     margin-bottom: 2rem;   
+     margin-bottom: 2rem;
+     
 }
 .main_consult p{
     font-weight: 400;
@@ -485,7 +486,7 @@ a{
 
 
 /* Contact */
-#section_6{
+#contact{
     overflow-x: hidden;
     overflow-y: hidden;
 }
@@ -499,6 +500,7 @@ a{
 }
 .form h2{
     font-size: 2rem;
+    font-weight: 500;
     width: 100%;  
     padding-bottom: 10px;
 }
@@ -512,12 +514,34 @@ a{
 
 .form .submit input, .form .submit textarea{
     width: 100%;
-    padding: 15px;
-    font-size: 1.1rem;
+    padding: 8px;
+    font-size: 15px;
+    border-radius: .3em;
     border: 1px solid #95a5a6;
     outline: none;
-    margin: 13px 0;
+    margin: 5.9px 0;
 }
+
+.form .submit  #name::-webkit-input-placeholder:after, .form .submit  #email::-webkit-input-placeholder:after {
+    content:"*";
+    color:red;
+    
+ } 
+ .form .submit #name::-moz-placeholder:after, .form .submit #email::-moz-placeholder:after {
+      content:"*";
+      color:red;
+      
+  }
+  .form .submit #name:-ms-input-placeholder:after ,  .form .submit #email:-ms-input-placeholder:after{     
+      content:"*";
+      color:red;     
+ }
+
+ 
+
+
+
+
 .form .submit input:focus, .form .submit textarea:focus{
     border: 1px solid #111;
 }
@@ -534,19 +558,24 @@ a{
     margin-bottom: 5px;
 }
 
+
+
 .send_message{
     width: 100%;
     display: inline-block;
 }
-.form .submit  a{
-    padding: 15px 0;
+.form .submit  #button{
+    padding: 10px 0;
     background: #111;
     color: #fff;
     text-align: center;
     width: 100%;
+    border-radius: .3em;
     cursor: pointer; 
-    font-size: 18px;
+    font-size: 15px;
     font-family: 'Poppins', sans-serif; 
+    display: grid;
+    place-content: center;
 }
 .form .submit button:active{
     background-color: green;
@@ -556,10 +585,31 @@ a{
     font-weight: 600;
     background: none;
 }
+
+.loader{
+    pointer-events: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #fff;
+    animation: an1 1s ease infinite;
+}
+
+@keyframes an1{
+  0%{
+    transform: rotate(0turn);
+
+  }
+  100%{
+    transform : rotate(1turn);
+  }
+}
 /* Map */
 
 .map h2{
     font-size: 2rem;
+    font-weight: 500;
     width: 100%; 
     padding-bottom: 10px;
 }
@@ -628,6 +678,10 @@ a{
 @media screen and (max-width:1042px){
     .main-nav{
         padding: 5px 30px; 
+    }
+
+    .section_2 h1{
+        font-size: 2rem;
     }
     #item li{
         padding-left: 2rem;
@@ -743,7 +797,7 @@ a{
 
 .section_2 h1{
      font-weight: 500;
-     font-size: 2rem;
+     
      margin-bottom: 1rem;   
 }
 .section_2 p{
@@ -876,12 +930,12 @@ a{
     }
 
     /* Services */
-#section_3{
+#services{
     margin-top: 1rem;
     
     
 }
-#section_3 h1{    
+#services h1{    
      font-size: 2rem;
      margin-bottom: 1rem; 
     
@@ -899,11 +953,11 @@ a{
 }
 
     /* Testimonials */
-    #section_4{
+    #testimonials{
         margin-top: 4rem;
        
     }
-    #section_4 h1{
+    #testimonials h1{
          font-size: 2rem;
          margin-bottom: 2rem;
     }
@@ -918,12 +972,13 @@ a{
     }
     .testimonial_container p {
      
-       font-size: 16px;     
+       font-size: 16px; 
+       padding-bottom: 0;    
     }
     
     .testimonial_container h3{
        
-        padding: 5px;
+        padding: 0px 5px;
         font-size: 16px;
        
     }
@@ -936,18 +991,18 @@ a{
 
     /* About */
 
-    #section_5{
+    #about{
       
         margin-top: 2rem;
     }
-    #section_5 h1{
+    #about h1{
            
              font-size: 2rem; 
              margin-top: 2rem;
       
         
     }
-    #section_5 h3{
+    #about h3{
         font-size: 1rem;
       
      
@@ -968,7 +1023,7 @@ a{
     }
 
     /* Contact */
-    #section_6{
+    #contact{
   
         margin-top: 6rem;
        
@@ -1103,12 +1158,12 @@ a{
    
 
     /* Services */
-#section_3{
+#services{
     margin-top: 1rem;
     
     
 }
-#section_3 h1{    
+#services h1{    
      font-size: 2rem;
      margin-bottom: 2rem; 
     
@@ -1131,11 +1186,11 @@ a{
 }
 
     /* Testimonials */
-    #section_4{
+    #testimonials{
         margin-top: 6rem;
        
     }
-    #section_4 h1{
+    #testimonials h1{
          font-size: 2rem;
          margin-bottom: 2rem;
     }
@@ -1174,18 +1229,18 @@ a{
 
     /* About */
 
-    #section_5{
+    #about{
       
         margin-top: 2rem;
     }
-    #section_5 h1{
+    #about h1{
            
              font-size: 2rem; 
              margin-top: 2rem;
       
         
     }
-    #section_5 h3{
+    #about h3{
         font-size: 1.1rem;
       
      
@@ -1202,7 +1257,7 @@ a{
     }
 
     /* Contact */
-    #section_6{
+    #contact{
   
         margin-top: 6rem;
        
@@ -1211,6 +1266,9 @@ a{
     .form h2{
         font-size: 1.5rem;
         
+    }
+    .form .submit .paragraph p{
+        font-size: 13px;
     }
 
     /* Map */

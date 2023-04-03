@@ -70,11 +70,11 @@
           </div>
           <ul id="item">
             <li><a href="#home">Home</a></li>
-            <li><a href="#section_3">Services</a></li>
-            <li><a href="#section_4">Testimonials</a></li>
-            <li><a href="#section_5">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#about">About</a></li>
             <li class="sendEmail">
-              <a href="mailto:zara.angels.ft@gmail.com" class="email btn"
+              <a href="mailto:info@zara-space.co.uk" class="email btn"
                 ><i class="fa fa-envelope-o" aria-hidden="true"></i> SEND AN
                 EMAIL</a
               >
@@ -175,7 +175,7 @@
       </div>
     </section>
 
-    <section id="section_3">
+    <section id="services">
       <div class="container">
         <div class="service_container">
           <h1>Services</h1>
@@ -265,7 +265,7 @@
       </div>
     </section>
 
-    <section id="section_4">
+    <section id="testimonials">
       <div class="container">
         <h1>Testimonials</h1>
         <div class="section_4">
@@ -310,7 +310,9 @@
       </div>
     </section>
 
-    <section id="section_5">
+    
+
+    <section id="about">
       <div class="container">
         <div class="section_5_container">
           <h1>About</h1>
@@ -395,7 +397,7 @@
       </div>
     </section>
 
-    <section id="section_6">
+    <section id="contact">
       <div class="container">
         <div class="contact" data-aos="fade-up">
           <div class="form">
@@ -411,7 +413,7 @@
               <input
                 type="text"
                 name=""
-                placeholder="FullName*"
+                placeholder="FullName *"
                 id="name"
                 required
               />
@@ -419,7 +421,7 @@
               <input
                 type="email"
                 name=""
-                placeholder="Email*"
+                placeholder="Email *"
                 id="email"
                 required
               />
@@ -448,7 +450,7 @@
               <textarea
                 placeholder="Message*"
                 cols="30"
-                rows="10"
+                rows="9"
                 id="message"
                 required
               ></textarea>
@@ -469,7 +471,10 @@
                 </p>
               </div>
 
-              <a href="" id="button">Send Message</a>
+              <a href="" id="button" >Send Message</a>
+              
+              
+              
             </form>
           </div>
           <div class="map">
@@ -538,78 +543,6 @@
         offset: 200,
         duration: 1000,
       });
-    </script>
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
-    <script>
-      let form = document.getElementById("form");
-
-      var button = document.getElementById("button");
-      
-
-      var inputmsg = document.querySelector(".input_text");
-
-      const sendEmail = (e) => {
-        e.preventDefault();
-        var iname = document.getElementById("name");
-        var email = document.getElementById("email");
-        var phone_no = document.getElementById("phone_no");
-        var post_code = document.getElementById("post_code");
-        var social_media = document.getElementById("social_media");
-        var message = document.getElementById("message");
-
-        let formData = {
-          name: iname.value,
-          email: email.value,
-          phone_no: phone_no.value,
-          post_code: post_code.value,
-          social_media: social_media.value,
-          subject: "ZaraFitAngel Contact Form Enquiry",
-          message: message.value,
-        };
-        if (
-          formData.name === "" ||
-          formData.email === "" ||
-          formData.message === ""
-        ) {
-          inputmsg.innerHTML = `<p class="errorText">Please fill in the required fields</p>`;
-
-          setTimeout(() => {
-            inputmsg.innerHTML = "";
-          }, 3000);
-        } else {
-          
-          let xhr = new XMLHttpRequest();
-          xhr.open("POST", "/");
-          xhr.setRequestHeader("content-type", "application/json");
-          
-          xhr.send(JSON.stringify(formData));
-           console.log('ok');
-            xhr.onload = function() {
-             
-              console.log(xhr.responseText);
-              if (xhr.responseText == 'success') {
-               
-                inputmsg.innerHTML = `<p class="successText">Message sent successfully</p>`;
-                setTimeout(() => {
-                  inputmsg.innerHTML = "";
-                }, 3000);
-                const inputs = document.querySelectorAll(
-                  "#name, #email, #phone_no, #post_code, #social_media, #message"
-                );
-                inputs.forEach((input) => {
-                  input.value = "";
-                });
-              } else {
-                inputmsg.innerHTML = `<p class="errorText">Something went wrong, try again</p>`;
-                setTimeout(() => {
-                  inputmsg.innerHTML = "";
-                }, 3000);
-              }
-            };
-        }
-      }
-
-      button.addEventListener("click", sendEmail);
     </script>
     <script src="./js/script.js"></script>
   </body>

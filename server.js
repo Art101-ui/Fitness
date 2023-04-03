@@ -1,9 +1,8 @@
 const express = require('express')
 const app = express();
 const nodemailer = require('nodemailer');
-const {EMAIL, PASSWORD} = require('./env')
-var favicon = require('serve-favicon');
-var path = require('path');
+require('dotenv').config();
+
 
 const PORT = process.env.PORT || 5000
 
@@ -17,36 +16,65 @@ app.get('/',(req,res)=>{
     res.sendFile(__dirname + '/public/index.html')
 })
 
-app.post('/',(req,res)=>{
-    console.log(req.body);
-
+app.post('/',async (req,res)=>{
+    
     let config={
-        service:'gmail',
+        host: 'smtpout.secureserver.net',
+  port: 587,
+  secure: false, // true for 465, false for other ports
+ 
+   tls:{},
         auth:{
-            user:EMAIL,
-            pass:PASSWORD
+            user: process.env.EMAIL, // generated ethereal user
+            pass: process.env.PASSWORD, 
             
         }
     }
 
     let transporter = nodemailer.createTransport(config);
 
+    let mailbody = `
+    <div>
+    <p>FullName: ${req.body.name} </p>
+    <p>Email : ${req.body.email}</p>
+    <p>Phone Number: ${req.body.phone_no}</p>
+    <p>Postcode: ${req.body.post_code}</p>
+    <p>Social media: ${req.body.social_media}</p>
+    <p>Message: ${req.body.message}</p>
+  </div>
+    `
+
     const mailOptions = {
-        from: req.body.email,
-        to:'obadmus912@gmail.com',
-        subject:`Message from ${req.body.email}: ${req.body.subject}`,
-        text:req.body.message
+        from: `${process.env.EMAIL}`,
+        to:'zara.angels.fit@gmail.com',
+        subject:` ${req.body.subject}`,
+        html:mailbody,
+        
+        
     };
 
-    transporter.sendMail(mailOptions,(error,info)=>{
-        if(error){
-            console.log(error);
-            res.send('error')
-        }else{
+   
+    
+        try {
+            const info = await transporter.sendMail(mailOptions);
             console.log('Email Sent' + info.response)
             res.send('success');
+        } catch (error) {
+            console.log(error);
+            res.send('error')
+            
         }
-    })
+
+        // if(error){
+        //     console.log(error);
+        //     res.send('error')
+        // }else{
+        //     console.log('Email Sent' + info.response)
+        //     res.send('success');
+        // }
+    
+
+    
 })
 
 app.listen(PORT, ()=>{
