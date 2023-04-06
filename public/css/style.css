@@ -172,6 +172,7 @@ a{
 /* Section-2 */
 #section_2{
     padding-top: 9rem;
+    padding-bottom: 5rem;
     overflow-x: hidden;
 }
 .section_2{
@@ -522,20 +523,7 @@ a{
     margin: 5.9px 0;
 }
 
-.form .submit  #name::-webkit-input-placeholder:after, .form .submit  #email::-webkit-input-placeholder:after {
-    content:"*";
-    color:red;
-    
- } 
- .form .submit #name::-moz-placeholder:after, .form .submit #email::-moz-placeholder:after {
-      content:"*";
-      color:red;
-      
-  }
-  .form .submit #name:-ms-input-placeholder:after ,  .form .submit #email:-ms-input-placeholder:after{     
-      content:"*";
-      color:red;     
- }
+
 
  
 
@@ -766,10 +754,7 @@ a{
 }
 
 /* Section 2 */
-#section_2{
-    margin-top: 6rem;
-       
-}
+
 .section_2{
     padding: 5px 20px;
 }
@@ -1035,9 +1020,7 @@ a{
     }
 
     /* Map */
-    .map{
-        margin-top: 4rem;
-    }
+    
     .map h2{
         font-size: 1.5rem;
         width: 100%; 
