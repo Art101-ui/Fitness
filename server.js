@@ -26,8 +26,11 @@ app.post('/',cors(),async (req,res)=>{
  
    tls:{},
         auth:{
-            user: process.env.EMAIL, // generated ethereal user
-            pass: process.env.PASSWORD, 
+            user: "info@zara-space.co.uk",
+            password:"D=gM3h$9=k"
+            
+            // user: process.env.EMAIL, // generated ethereal user
+            // pass: process.env.PASSWORD, 
             
         }
     }
@@ -46,7 +49,8 @@ app.post('/',cors(),async (req,res)=>{
     `
 
     const mailOptions = {
-        from: `${process.env.EMAIL}`,
+        from: "info@zara-space.co.uk",
+        // `${process.env.EMAIL}`,
         to:'obadmus912@gmail.com',
         subject:` ${req.body.subject}`,
         html:mailbody,
