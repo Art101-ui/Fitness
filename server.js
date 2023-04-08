@@ -46,7 +46,7 @@ app.post('/',async (req,res)=>{
 
     const mailOptions = {
         from: `${process.env.EMAIL}`,
-        to:'zara.angels.fit@gmail.com',
+        to:'obadmus912@gmail.com',
         subject:` ${req.body.subject}`,
         html:mailbody,
         
