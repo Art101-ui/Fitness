@@ -27,7 +27,7 @@ app.post('/',cors(),async (req,res)=>{
    tls:{},
         auth:{
             user: "info@zara-space.co.uk",
-            password:"D=gM3h$9=k"
+            pass: "D=gM3h$9=k"
             
             // user: process.env.EMAIL, // generated ethereal user
             // pass: process.env.PASSWORD, 
