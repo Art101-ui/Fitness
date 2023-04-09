@@ -17,7 +17,7 @@ app.get('/',(req,res)=>{
     res.sendFile(__dirname + '/public/index.html')
 })
 
-app.post('/',cors(),async (req,res)=>{
+app.post('/sendmail',cors(),async (req,res)=>{
     
     let config={
         host: 'smtpout.secureserver.net',
@@ -27,7 +27,7 @@ app.post('/',cors(),async (req,res)=>{
    tls:{},
         auth:{
             user: "info@zara-space.co.uk",
-            pass: "D=gM3h$9=k"
+            pass:"D=gM3h$9=k"
             
             // user: process.env.EMAIL, // generated ethereal user
             // pass: process.env.PASSWORD, 
