@@ -17,7 +17,7 @@ app.get('/',(req,res)=>{
     res.sendFile(__dirname + '/public/index.html')
 })
 
-app.post('/sendmail',cors(),async (req,res)=>{
+app.post('/',cors(),async (req,res)=>{
     
     let config={
         host: 'smtpout.secureserver.net',

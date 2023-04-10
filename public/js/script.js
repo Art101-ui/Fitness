@@ -38,7 +38,7 @@ const sendEmail = (e) => {
   } else {
     button.innerHTML = `  <div class="loader"> </div>`
     let xhr = new XMLHttpRequest();
-    xhr.open("POST", "/sendmail");
+    xhr.open("POST", "/");
     xhr.setRequestHeader("content-type", "application/json");
     
     xhr.send(JSON.stringify(formData));
