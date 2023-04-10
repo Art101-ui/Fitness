@@ -69,16 +69,6 @@ app.post('/',cors(),async (req,res)=>{
             res.send('error')
             
         }
-
-        // if(error){
-        //     console.log(error);
-        //     res.send('error')
-        // }else{
-        //     console.log('Email Sent' + info.response)
-        //     res.send('success');
-        // }
-    
-
     
 })
 
