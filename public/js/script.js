@@ -41,7 +41,7 @@ const sendEmail = (e) => {
     button.innerHTML = `  <div class="loader"> </div>`
     
     
-    axios.post("https://server-art101-ui.vercel.app/", formData,
+    axios.post("https://server-art101-ui.vercel.app", formData,
     )
     .then(function (response) {
       console.log(response);
