@@ -25,6 +25,8 @@ const sendEmail = (e) => {
     subject: "ZaraFitAngel Contact Form Enquiry",
     message: message.value,
   };
+
+ 
   if (
     formData.name === "" ||
     formData.email === "" ||
@@ -37,46 +39,57 @@ const sendEmail = (e) => {
     }, 3000);
   } else {
     button.innerHTML = `  <div class="loader"> </div>`
-    let xhr = new XMLHttpRequest();
-    xhr.open("POST", "https://server-art101-ui.vercel.app/sendmail");
-    xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
-    xhr.setRequestHeader("content-type", "application/json");
     
-    xhr.send(JSON.stringify(formData));
-     console.log('ok');
+    
+    axios.post("https://server-art101-ui.vercel.app/sendmail", formData,
+    )
+    .then(function (response) {
+      console.log(response.status);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+
+    // let xhr = new XMLHttpRequest();
+    // xhr.open("POST", "https://server-art101-ui.vercel.app/sendmail");
+    // xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
+    // xhr.setRequestHeader("content-type", "application/json");
+    
+    // xhr.send(JSON.stringify(formData));
+    //  console.log('ok');
      
-      xhr.onload = function() {
+      // xhr.onload = function() {
        
-        console.log(xhr.responseText);
-        if (xhr.responseText == 'success') {
+      //   console.log(xhr.responseText);
+      //   if (== 'success') {
           
 
 
 
-button.textContent = `Send Message`
+      //    button.textContent = `Send Message`
 
 
 
-          inputmsg.innerHTML = `<p class="successText"><i class="fa fa-check" aria-hidden="true"></i> Message sent successfully</p>`;
-          setTimeout(() => {
-            inputmsg.innerHTML = "";
-          }, 3000);
-          const inputs = document.querySelectorAll(
-            "#name, #email, #phone_no, #post_code, #social_media, #message"
-          );
-          inputs.forEach((input) => {
-            input.value = "";
-          });
-        } else {
+      //     inputmsg.innerHTML = `<p class="successText"><i class="fa fa-check" aria-hidden="true"></i> Message sent successfully</p>`;
+      //     setTimeout(() => {
+      //       inputmsg.innerHTML = "";
+      //     }, 3000);
+      //     const inputs = document.querySelectorAll(
+      //       "#name, #email, #phone_no, #post_code, #social_media, #message"
+      //     );
+      //     inputs.forEach((input) => {
+      //       input.value = "";
+      //     });
+      //   } else {
           
-          button.textContent = `Send Message`
-          inputmsg.innerHTML = `<p class="errorText"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> Something went wrong, try again</p>`;
-          setTimeout(() => {
-            inputmsg.innerHTML = "";
-          }, 3000);
+      //     button.textContent = `Send Message`
+      //     inputmsg.innerHTML = `<p class="errorText"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> Something went wrong, try again</p>`;
+      //     setTimeout(() => {
+      //       inputmsg.innerHTML = "";
+      //     }, 3000);
 
-        }
-      };
+      //   }
+      // };
 
       
   
