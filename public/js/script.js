@@ -44,10 +44,29 @@ const sendEmail = (e) => {
     axios.post("https://server-art101-ui.vercel.app/sendmail", formData,
     )
     .then(function (response) {
-      console.log(response.status);
+      console.log(response);
+           button.textContent = `Send Message`
+
+
+
+          inputmsg.innerHTML = `<p class="successText"><i class="fa fa-check" aria-hidden="true"></i> Message sent successfully</p>`;
+          setTimeout(() => {
+            inputmsg.innerHTML = "";
+          }, 3000);
+          const inputs = document.querySelectorAll(
+            "#name, #email, #phone_no, #post_code, #social_media, #message"
+          );
+          inputs.forEach((input) => {
+            input.value = "";
+          });
     })
     .catch(function (error) {
       console.log(error);
+            button.textContent = `Send Message`
+          inputmsg.innerHTML = `<p class="errorText"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> Something went wrong, try again</p>`;
+          setTimeout(() => {
+            inputmsg.innerHTML = "";
+          }, 3000);
     });
 
     // let xhr = new XMLHttpRequest();
