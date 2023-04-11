@@ -40,7 +40,7 @@ const sendEmail = (e) => {
     let xhr = new XMLHttpRequest();
     xhr.open("POST", "https://server-acb4sssn3-art101-ui.vercel.app/sendmail");
     xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
-    xhr.setRequestHeader("content-type", "application/json");
+    // xhr.setRequestHeader("content-type", "application/json");
     
     xhr.send(JSON.stringify(formData));
      console.log('ok');
