@@ -42,6 +42,12 @@ const sendEmail = (e) => {
     
     
     axios.post("https://server-art101-ui.vercel.app/sendmail", formData,
+    {
+      headers:{
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Credentials": true
+      }
+    }
     )
     .then(function (response) {
       console.log(response);
